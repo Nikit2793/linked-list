@@ -1,0 +1,26 @@
+linked list refresher:
+- stores collection of data
+- successive elements are connected by pointers
+- size can grow or shrink during execution of program
+- last element points to NULL
+
+Operations of a linked list
+- Insert an element into list
+- Delete an element into list
+- removes all elements from list
+- count/size return the number of elements in the list
+- find the nth node in the linked list
+
+linked list vs arrays ?
+* arrays
+    - One memory block for entire arrays
+    - accessed in constant time since calculation of address is in constant time(one multiplaction and addition): base_address + data_type_size*index
+    - but normally array is of fixed size.
+    - since one block of memory, sometime a large size allocation might cause issues.
+    - position based insertion in the array is complex.
+* linked list
+    - It can be expanded in constant time. Array, cannot be expaned like this. Instead a new array with a bigger size needs to be created which will take time (copying, waste of memory, etc).
+    - Accessing an element in linked list can take time O(n). Unlike array where we can use index and access in constant time, the same is not possible here.
+    - Linked list differs from the way it is origanized in memory. Array elements are normally close to its neighbours since one memory block.
+    - Linked list operations can be complex. Removing last element involves setting the pointer of second last element to null, which in turn involves traversing the whole array.
+    - linked list takes extra space to store the pointers as well. Hence, more memory than the arrays.  
