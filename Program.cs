@@ -8,6 +8,8 @@ namespace linked_list {
             do {
                 Console.WriteLine (Constants.menuTitle);
                 Console.WriteLine (Constants.singlyLLOperation1);
+                Console.WriteLine (Constants.singlyLLOperation2);
+                Console.WriteLine (Constants.singlyLLOperation3);
                 Console.WriteLine (Constants.choicePromptText);
                 try {
                     choice = int.Parse (Console.ReadLine ());

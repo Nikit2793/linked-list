@@ -27,21 +27,54 @@ namespace linked_list {
         public static void InsertNodeAtBeginning (int data) {
             if (head == null) {
                 head = CreateNode (data);
-                PrintList (head);
             } else {
                 ListNode newNode = CreateNode (data);
                 newNode.Next = head;
                 head = newNode;
-                PrintList (newNode);
             }
+            PrintList (head);
         }
 
-        public static void InsertNodeAtEnd (ListNode head) {
-            return;
+        public static void InsertNodeAtEnd (int data) {
+            if (head == null) {
+                head = CreateNode (data);
+            } else {
+                ListNode newNode = CreateNode (data);
+                ListNode node = head;
+                while (node.Next != null) {
+                    node = node.Next;
+                }
+                node.Next = newNode;
+            }
+            PrintList (head);
         }
 
-        public static void InsertNodeAtPosition (ListNode head, int position) {
-            return;
+        public static void InsertNodeAtPosition (int data, int position) {
+            // if position is negetive or head = null or position is more than the length
+            // then it is invalid
+            // assuming that position needs to be one of the positions of th linked list.
+            int listSize = GetListSize ();
+            if (head == null || position < 0 || position >= listSize) {
+                throw new Exception ("Specified position is invalid or does not exist.");
+            }
+            // position can be 0, at the end or in the middle
+            // we can use the above functions, but for now duplicating the code here.
+            ListNode newNode = CreateNode (data);
+            ListNode node = head, prevNode = head;
+            if (position == 0) {
+                newNode.Next = head;
+                head = newNode;
+            } else {
+                int pos = 0;
+                while (node.Next != null && pos < position) {
+                    prevNode = node;
+                    node = node.Next;
+                    pos++;
+                }
+                prevNode.Next = newNode;
+                newNode.Next = node;
+            }
+            PrintList (head);
         }
 
         public static void DeleteNodeAtEnd () {
@@ -67,8 +100,18 @@ namespace linked_list {
             Console.WriteLine ();
         }
 
-        public static void GetListSize (ListNode node) {
-            return;
+        public static int GetListSize () {
+            if (head == null) {
+                return 0;
+            } else {
+                int len = 0;
+                ListNode node = head;
+                while (node.Next != null) {
+                    node = node.Next;
+                    len++;
+                }
+                return len + 1;
+            }
         }
     }
 }

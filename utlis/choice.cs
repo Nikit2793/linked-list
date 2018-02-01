@@ -17,6 +17,26 @@ namespace linked_list {
                         Console.WriteLine (e.Message);
                     }
                     break;
+                case 2:
+                    try {
+                        Console.WriteLine (Constants.dataPromptText);
+                        int data = int.Parse (Console.ReadLine ());
+                        Operations.InsertNodeAtEnd (data);
+                    } catch (Exception e) {
+                        Console.WriteLine (e.Message);
+                    }
+                    break;
+                case 3:
+                    try {
+                        Console.WriteLine (Constants.dataPromptText);
+                        int data = int.Parse (Console.ReadLine ());
+                        Console.WriteLine (Constants.positionPromptText);
+                        int position = int.Parse (Console.ReadLine ());
+                        Operations.InsertNodeAtPosition (data, position);
+                    } catch (Exception e) {
+                        Console.WriteLine (e.Message);
+                    }
+                    break;
                 default:
                     Console.WriteLine (Constants.invalidChoice);
                     break;
