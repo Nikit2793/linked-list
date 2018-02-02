@@ -78,18 +78,67 @@ namespace linked_list {
         }
 
         public static void DeleteNodeAtEnd () {
-            return;
+            if (head == null) {
+                throw new Exception ("Linked list is empty");
+            }
+            if (head.Next == null) {
+                head = null;
+            } else {
+                ListNode prev = head, node = head;
+                while (node.Next != null) {
+                    prev = node;
+                    node = node.Next;
+                }
+                prev.Next = null;
+            }
+            PrintList (head);
+
         }
 
         public static void DeleteNodeAtBeginning () {
-            return;
+            if (head != null) {
+                ListNode temp = head;
+                head = temp.Next;
+                temp.Next = null;
+                PrintList (head);
+            } else {
+                throw new Exception ("Linked list is empty.");
+            }
         }
 
-        public static void DeleteList () {
-            return;
+        public static void DeleteNodeAtPosition (int position) {
+            if (head == null) {
+                throw new Exception ("Linked list is empty");
+            }
+            if (position < 0 || position >= GetListSize ()) {
+                throw new Exception ("Position is invalid.");
+            }
+            if (position == 0) {
+                ListNode temp = head;
+                head = temp.Next;
+                temp.Next = null;
+            } else {
+                int pos = 0;
+                ListNode prev = head, node = head;
+                while (node.Next != null && pos != position) {
+                    prev = node;
+                    node = node.Next;
+                    pos++;
+                }
+                if (node.Next == null) {
+                    prev.Next = null;
+                } else {
+                    prev.Next = node.Next;
+                    node.Next = null;
+                }
+            }
+            PrintList (head);
         }
 
         public static void PrintList (ListNode head) {
+            if (head == null) {
+                throw new Exception ("Linked list is empty");
+            }
             ListNode node = head;
             Console.WriteLine (Constants.resultPromptText);
             while (node.Next != null) {

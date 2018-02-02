@@ -37,6 +37,22 @@ namespace linked_list {
                         Console.WriteLine (e.Message);
                     }
                     break;
+                case 4:
+                    Operations.DeleteNodeAtBeginning ();
+                    break;
+                case 5:
+                    Operations.DeleteNodeAtEnd ();
+                    break;
+                case 6:
+                    try {
+                        Console.WriteLine (Constants.positionPromptText);
+                        int position = int.Parse (Console.ReadLine ());
+
+                        Operations.DeleteNodeAtPosition (position);
+                    } catch (Exception e) {
+                        Console.WriteLine (e.Message);
+                    }
+                    break;
                 default:
                     Console.WriteLine (Constants.invalidChoice);
                     break;

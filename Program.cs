@@ -10,6 +10,9 @@ namespace linked_list {
                 Console.WriteLine (Constants.singlyLLOperation1);
                 Console.WriteLine (Constants.singlyLLOperation2);
                 Console.WriteLine (Constants.singlyLLOperation3);
+                Console.WriteLine (Constants.singlyLLOperation4);
+                Console.WriteLine (Constants.singlyLLOperation5);
+                Console.WriteLine (Constants.singlyLLOperation6);
                 Console.WriteLine (Constants.choicePromptText);
                 try {
                     choice = int.Parse (Console.ReadLine ());
