@@ -1,9 +1,12 @@
 using System;
+using doubly_linked_list;
 using linked_list;
 
 namespace linked_list {
     public static class Choice {
-        public static void ExecuteOpertion (int choice) {
+        public static void ExecuteOpertion (int choice, int type) {
+            int offset = (type == (int) Types.SINGLY_LINKED_LIST) ? 0 : (type == (int) Types.DOUBLY_LINKED_LIST) ? 6 : 0;
+            choice = choice == 0 ? 0 : choice + offset;
             switch (choice) {
                 case 0:
                     Environment.Exit (0);
@@ -49,6 +52,15 @@ namespace linked_list {
                         int position = int.Parse (Console.ReadLine ());
 
                         Operations.DeleteNodeAtPosition (position);
+                    } catch (Exception e) {
+                        Console.WriteLine (e.Message);
+                    }
+                    break;
+                case 7:
+                    try {
+                        Console.WriteLine (Constants.dataPromptText);
+                        int data = int.Parse (Console.ReadLine ());
+                        doubly_linked_list.Operations.InsertNodeAtBeginning (data);
                     } catch (Exception e) {
                         Console.WriteLine (e.Message);
                     }
