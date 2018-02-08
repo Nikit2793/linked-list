@@ -28,6 +28,11 @@ namespace linked_list {
                             break;
                         case (int) Types.DOUBLY_LINKED_LIST:
                             Console.WriteLine (Constants.doublyLLOperation1);
+                            Console.WriteLine (Constants.doublyLLOperation2);
+                            Console.WriteLine (Constants.doublyLLOperation3); 
+                            Console.WriteLine (Constants.doublyLLOperation4);
+                            Console.WriteLine (Constants.doublyLLOperation5);
+                            Console.WriteLine (Constants.doublyLLOperation6); 
                             type = (int) Types.DOUBLY_LINKED_LIST;
                             break;
                         default:

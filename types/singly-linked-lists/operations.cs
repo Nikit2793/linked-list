@@ -53,6 +53,7 @@ namespace linked_list {
             // if position is negetive or head = null or position is more than the length
             // then it is invalid
             // assuming that position needs to be one of the positions of th linked list.
+
             int listSize = GetListSize ();
             if (head == null || position < 0 || position >= listSize) {
                 throw new Exception ("Specified position is invalid or does not exist.");

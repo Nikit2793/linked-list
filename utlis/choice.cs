@@ -65,6 +65,42 @@ namespace linked_list {
                         Console.WriteLine (e.Message);
                     }
                     break;
+                case 8:
+                    try {
+                        Console.WriteLine (Constants.dataPromptText);
+                        int data = int.Parse (Console.ReadLine ());
+                        doubly_linked_list.Operations.InsertNodeAtEnd (data);
+                    } catch (Exception e) {
+                        Console.WriteLine (e.Message);
+                    }
+                    break;
+                case 9:
+                    try {
+                        Console.WriteLine (Constants.dataPromptText);
+                        int data = int.Parse (Console.ReadLine ());
+                        Console.WriteLine (Constants.positionPromptText);
+                        int position = int.Parse (Console.ReadLine ());
+                        doubly_linked_list.Operations.InsertNodeAtPosition (data, position);
+                    } catch (Exception e) {
+                        Console.WriteLine (e.Message);
+                    }
+                    break;
+                case 10:
+                    doubly_linked_list.Operations.DeleteNodeAtBeginning ();
+                    break;
+                case 11:
+                    doubly_linked_list.Operations.DeleteNodeAtEnd ();
+                    break;
+                case 12:
+                    try {
+                        Console.WriteLine (Constants.positionPromptText);
+                        int position = int.Parse (Console.ReadLine ());
+
+                        doubly_linked_list.Operations.DeleteNodeAtPosition (position);
+                    } catch (Exception e) {
+                        Console.WriteLine (e.Message);
+                    }
+                    break;
                 default:
                     Console.WriteLine (Constants.invalidChoice);
                     break;
