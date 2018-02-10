@@ -1,5 +1,4 @@
 ﻿using System;
-using linked_list;
 
 namespace linked_list {
     class Program {
@@ -9,6 +8,7 @@ namespace linked_list {
             Console.WriteLine ("Please choose the type of linked list: ");
             Console.WriteLine ("1. Singly Linked List");
             Console.WriteLine ("2. Doubly Linked List");
+            Console.WriteLine ("3. Circular linked list");
             Console.WriteLine (Constants.choicePromptText);
             try {
                 int typeChoice = int.Parse (Console.ReadLine ());
@@ -35,6 +35,13 @@ namespace linked_list {
                             Console.WriteLine (Constants.doublyLLOperation6); 
                             type = (int) Types.DOUBLY_LINKED_LIST;
                             break;
+                        case (int) Types.CIRCULAR_LINKED_LIST:
+                            Console.WriteLine (Constants.circularLLOperation1); 
+                            Console.WriteLine (Constants.circularLLOperation2);
+                            Console.WriteLine (Constants.circularLLOperation3);
+                            Console.WriteLine (Constants.circularLLOperation4); 
+                            type = (int) Types.CIRCULAR_LINKED_LIST;
+                            break;    
                         default:
                             type = 0;
                             throw new Exception ("Invalid Choice.");
@@ -50,7 +57,6 @@ namespace linked_list {
             } catch (Exception e) {
                 Console.WriteLine (e.Message);
             }
-
         }
     }
 }

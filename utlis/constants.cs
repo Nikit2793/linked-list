@@ -18,12 +18,19 @@ namespace linked_list {
         public const string singlyLLOperation5 = "5. Singly Linked List:: Delete node at end";
         public const string singlyLLOperation6 = "6. Singly Linked List:: Delete node at position p(starting with 0)";
 
-        // SINGLY LINKED LIST OPTIONS
+        // DOUBLY LINKED LIST OPTIONS
         public const string doublyLLOperation1 = "1. Doubly Linked List:: Insert node at the beginning";
         public const string doublyLLOperation2 = "2. Doubly Linked List:: Insert node at the end";
         public const string doublyLLOperation3 = "3. Doubly Linked List:: Insert node at position p(starting from 0)";
         public const string doublyLLOperation4 = "4. Doubly Linked List:: Delete node at beginning";
-        public const string doublyLLOperation5 = "5 Doubly Linked List:: Delete node at end";
+        public const string doublyLLOperation5 = "5. Doubly Linked List:: Delete node at end";
         public const string doublyLLOperation6 = "6. Doubly Linked List:: Delete node at position p(starting with 0)";
+   
+        // CIRCULAR LINKED LIST
+        public const string circularLLOperation1 = "1. Circular Linked List:: Insert node at the beginning";
+        public const string circularLLOperation2 = "2. Circular Linked List:: Insert node at the end";
+        public const string circularLLOperation3 = "3. Circular Linked List:: Delete node at beginning";
+        public const string circularLLOperation4 = "4. Circular Linked List:: Delete node at end";
+   
     }
 }

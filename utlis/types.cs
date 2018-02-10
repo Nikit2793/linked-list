@@ -1,6 +1,7 @@
 namespace linked_list {
     public enum Types {
         SINGLY_LINKED_LIST = 1,
-        DOUBLY_LINKED_LIST = 2
+        DOUBLY_LINKED_LIST = 2,
+        CIRCULAR_LINKED_LIST = 3
     }
 }

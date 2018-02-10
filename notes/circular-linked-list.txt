@@ -1,0 +1,3 @@
+- Circular linked list for managing the computing resources of a computer.
+- Used for implementing stacks and queues.
+- round robin algorithm for process to access the computing resources of CPU.

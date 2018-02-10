@@ -5,7 +5,14 @@ using linked_list;
 namespace linked_list {
     public static class Choice {
         public static void ExecuteOpertion (int choice, int type) {
-            int offset = (type == (int) Types.SINGLY_LINKED_LIST) ? 0 : (type == (int) Types.DOUBLY_LINKED_LIST) ? 6 : 0;
+            int offset = 0;
+            if (type == (int) Types.SINGLY_LINKED_LIST) {
+                offset = 0;
+            } else if (type == (int) Types.DOUBLY_LINKED_LIST) {
+                offset = 6;
+            } else if (type == (int) Types.CIRCULAR_LINKED_LIST) {
+                offset = 12;
+            }
             choice = choice == 0 ? 0 : choice + offset;
             switch (choice) {
                 case 0:
@@ -100,6 +107,30 @@ namespace linked_list {
                     } catch (Exception e) {
                         Console.WriteLine (e.Message);
                     }
+                    break;
+                case 13:
+                    try {
+                        Console.WriteLine (Constants.dataPromptText);
+                        int data = int.Parse (Console.ReadLine ());
+                        circular_linked_list.Operations.InsertNodeAtBeginning (data);
+                    } catch (Exception e) {
+                        Console.WriteLine (e.Message);
+                    }
+                    break;
+                case 14:
+                    try {
+                        Console.WriteLine (Constants.dataPromptText);
+                        int data = int.Parse (Console.ReadLine ());
+                        circular_linked_list.Operations.InsertNodeAtEnd (data);
+                    } catch (Exception e) {
+                        Console.WriteLine (e.Message);
+                    }
+                    break;
+                case 15:
+                    circular_linked_list.Operations.DeleteNodeAtBeginning ();
+                    break;
+                case 16:
+                    circular_linked_list.Operations.DeleteNodeAtEnd ();
                     break;
                 default:
                     Console.WriteLine (Constants.invalidChoice);
